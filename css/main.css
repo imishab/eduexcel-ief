@@ -2692,7 +2692,6 @@ form .inputs-description {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .header.header-transparent .controls__block {
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
   -webkit-transition: border-left 0.5s ease-in-out;
   -o-transition: border-left 0.5s ease-in-out;
   -moz-transition: border-left 0.5s ease-in-out;
