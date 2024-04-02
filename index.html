@@ -90,9 +90,11 @@
     }
   }
 
-  .imgg2 {
-    margin-top: -230px;
 
+  .imgg2 {
+    z-index: -9999;
+    margin-top: -30px;
+    margin-bottom: 40px;
   }
 
   .hed {
@@ -112,7 +114,8 @@
 
   @media only screen and (max-width: 600px) {
     .imgg2 {
-      content: url(images/logo3.png);
+      margin-top: 0px;
+      content: url(images/logo.png);
       width: 90%;
     }
 
@@ -127,10 +130,26 @@
     }
   }
 
+  @media only screen and (min-width: 768px) {
+    .four-sells-block {
+      border-right: 1px solid #42426400;
+    }
+  }
+
   /* .header__logo img {
     display: block;
     width: 100%;
   } */
+  .controls__block {
+    position: relative;
+    height: 100%;
+    border-left: 1px solid #42426400;
+    padding: 0 2.4rem;
+    -webkit-transition: border-left 0.5s ease-in-out;
+    -o-transition: border-left 0.5s ease-in-out;
+    -moz-transition: border-left 0.5s ease-in-out;
+    transition: border-left 0.5s ease-in-out;
+  }
 </style>
 
 <body>
@@ -145,7 +164,10 @@
     <!-- Logo Start -->
     <div class="">
       <!-- Your Logo Here -->
-      <img src="images/newlogo.png" class="imgg">
+      <a href="index.html">
+
+        <img src="images/newlogo.png" class="imgg">
+      </a>
     </div>
     <!-- Logo End -->
 
@@ -188,7 +210,9 @@
               </a>
             </li>
             <li>
-              <a class="link-s" href="https://www.linkedin.com/feed/update/urn:li:activity:7177547970903465984?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7177547970903465984%29" target="_blank">
+              <a class="link-s"
+                href="https://www.linkedin.com/feed/update/urn:li:activity:7177547970903465984?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7177547970903465984%29"
+                target="_blank">
                 <i class="fa-brands fa-linkedin"></i>
                 <span>LinkedIn</span>
               </a>
@@ -212,7 +236,7 @@
 
       <!-- Menu Trigger Start -->
 
-      <div class="controls__block">
+      <div class="controls__block" style="display: none;">
         <a href="#0" id="menu-trigger" class="menu-trigger link-l">
           <span class="menu-objects"></span>
           <span class="menu-close"></span>
@@ -324,7 +348,7 @@
 
                     <!-- Headline Data Start -->
                     <ul class="intro__data">
-                      <img src="images/logo3.png" class="imgg2">
+                      <img src="images/logo.png" class="imgg2">
 
                       <li>
                         <p class="additional-text"><a class="link-s"
@@ -333,7 +357,7 @@
                         </p>
                       </li>
                       <li>
-                       
+
                       </li>
                     </ul>
                     <!-- Headline Data End -->
@@ -382,7 +406,7 @@
       <div class="row g-0 fullheight">
 
         <!-- Inner Section Content Start -->
-        <div class="col-12 inner__content">
+        <div class="col-12 inner__content2">
           <!-- inner section blocks -->
           <div class="inner__blocks svg-background-about svg-background-about">
 
@@ -579,7 +603,7 @@
         <!-- Inner Section Content End -->
 
         <!-- Inner Section Media Start -->
-        <div class="col-12 inner__media">
+        <div class="col-12 ">
 
           <!-- Inner Swiper Carousel Start -->
           <!-- Slider main container -->
@@ -614,7 +638,7 @@
       <div class="row g-0 fullheight">
 
         <!-- Inner Section Content Start -->
-        <div class="col-12 inner__content">
+        <div class="">
           <div class="inner__blocks">
 
             <!-- Inner Container - Section Title Start -->
@@ -797,15 +821,15 @@
       <div class="row g-0 fullheight">
 
         <!-- Inner Section Content Start -->
-        <div class="col-12 inner__content">
+        <div class="col-12 inner__content2">
           <!-- inner section blocks -->
           <div class="inner__blocks">
 
             <!-- Inner Container - Section Title Start -->
-           
+
             <!-- Inner Container - Section Title End -->
 
-            <!-- Inner Container - Contact Data Start -->
+            <!-- Inner Container - Contact Data Start --><br><br><br>
             <div class="inner__container no-padding contactdata">
               <div class="container-fluid p-0">
                 <div class="row g-0 align-items-stretch">
@@ -924,7 +948,7 @@
         <div class="col-12 inner__media">
 
           <!-- Inner Section Image Background Start -->
-          <div class="media__image media-image-contact"></div>
+          <div class=""></div>
           <!-- Inner Section Image Background End -->
 
         </div>

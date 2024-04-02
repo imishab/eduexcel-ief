@@ -2980,6 +2980,7 @@ form .inputs-description {
 }
 
 .main__media {
+  z-index: -9999;
   position: relative;
   height: 60vh;
   min-height: 600px;
@@ -4170,6 +4171,12 @@ form .inputs-description {
   .inner__content {
     width: -moz-calc(100% - 200px);
     width: calc(100% - 200px);
+    height: 100%;
+    min-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .inner__content2 {
     height: 100%;
     min-height: 600px;
     overflow-y: auto;
