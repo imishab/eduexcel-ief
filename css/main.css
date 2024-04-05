@@ -180,6 +180,9 @@ button::-moz-focus-inner {
 input::-moz-focus-inner {
   border: 0 !important;
 }
+select::-moz-focus-inner {
+  border: 0 !important;
+}
 
 ::-moz-selection {
   background-color: #a6a4f6;
@@ -2445,6 +2448,7 @@ form {
   width: 100%;
 }
 form input,
+form select,
 form textarea {
   position: relative;
   display: block;
@@ -2464,10 +2468,15 @@ form textarea {
   transition: border 0.3s, background-color 0.3s ease-in-out;
 }
 form input.margin-s,
+form select.margin-s,
 form textarea.margin-s {
   margin: 0 0 0.6rem 0;
 }
 form input {
+  height: 5rem;
+  margin: 0 0 2.4rem 0;
+}
+form select {
   height: 5rem;
   margin: 0 0 2.4rem 0;
 }
@@ -2477,6 +2486,7 @@ form textarea {
   margin: 0 0 2.4rem 0;
 }
 form input.margin-s,
+form select.margin-s,
 form textarea.margin-s {
   margin: 0 0 0.6rem 0;
 }
@@ -2492,12 +2502,19 @@ form .inputs-description {
   form input {
     height: 5rem;
   }
+  form select {
+    height: 5rem;
+  }
   form textarea {
     height: 18rem;
   }
 }
 
 .form-light ::-webkit-input-placeholder {
+  font-weight: 300;
+  color: #8c8caa;
+}
+.form-light ::-webkit-select-placeholder {
   font-weight: 300;
   color: #8c8caa;
 }
@@ -2513,7 +2530,12 @@ form .inputs-description {
   font-weight: 300;
   color: #8c8caa;
 }
+.form-light :-ms-select-placeholder {
+  font-weight: 300;
+  color: #8c8caa;
+}
 .form-light input:focus:required:invalid,
+.form-light select:focus:required:invalid,
 .form-light textarea:focus:required:invalid {
   color: #ffffff;
 }
@@ -2522,11 +2544,13 @@ form .inputs-description {
   color: #ffffff;
 }
 .form-light input,
+.form-light select,
 .form-light textarea {
   border: 1px solid #424264;
   color: #ffffff;
 }
 .form-light input:focus,
+.form-light select:focus,
 .form-light textarea:focus {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid #807df2;
@@ -2539,6 +2563,10 @@ form .inputs-description {
   font-weight: 300;
   color: #999999;
 }
+.form-dark ::-webkit-select-placeholder {
+  font-weight: 300;
+  color: #999999;
+}
 .form-dark :-moz-placeholder {
   font-weight: 300;
   color: #999999;
@@ -2548,6 +2576,10 @@ form .inputs-description {
   color: #999999;
 }
 .form-dark :-ms-input-placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+.form-dark :-ms-select-placeholder {
   font-weight: 300;
   color: #999999;
 }

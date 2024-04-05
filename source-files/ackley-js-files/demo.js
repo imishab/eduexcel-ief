@@ -29,7 +29,7 @@
 // Table of Contents End
 // ------------------------------------------------
 
-$(window).on("load", function() {
+$(window).on("load", function () {
 
   "use strict";
 
@@ -38,7 +38,7 @@ $(window).on("load", function() {
   // --------------------------------------------- //
   $(".loader__circle").addClass('fade');
 
-  setTimeout(function(){
+  setTimeout(function () {
     $(".loader").addClass('loaded');
   }, 300);
   // --------------------------------------------- //
@@ -47,40 +47,40 @@ $(window).on("load", function() {
 
 });
 
-$(function() {
+$(function () {
 
   "use strict";
 
   // ----------------------------------------------- //
   // Background-attachment: fixed Solution for IE Start
   // ----------------------------------------------- //
-  if(navigator.userAgent.match(/Trident\/7\./)) {
+  if (navigator.userAgent.match(/Trident\/7\./)) {
     $('body').on("mousewheel", function () {
-        event.preventDefault();
+      event.preventDefault();
 
-        var wheelDelta = event.wheelDelta;
+      var wheelDelta = event.wheelDelta;
 
-        var currentScrollPosition = window.pageYOffset;
-        window.scrollTo(0, currentScrollPosition - wheelDelta);
+      var currentScrollPosition = window.pageYOffset;
+      window.scrollTo(0, currentScrollPosition - wheelDelta);
     });
 
     $('body').keydown(function (e) {
-          e.preventDefault(); // prevent the default action (scroll / move caret)
-          var currentScrollPosition = window.pageYOffset;
+      e.preventDefault(); // prevent the default action (scroll / move caret)
+      var currentScrollPosition = window.pageYOffset;
 
-          switch (e.which) {
+      switch (e.which) {
 
-              case 38: // up
-                  window.scrollTo(0, currentScrollPosition - 120);
-                  break;
+        case 38: // up
+          window.scrollTo(0, currentScrollPosition - 120);
+          break;
 
-              case 40: // down
-                  window.scrollTo(0, currentScrollPosition + 120);
-                  break;
+        case 40: // down
+          window.scrollTo(0, currentScrollPosition + 120);
+          break;
 
-              default: return; // exit this handler for other keys
-          }
-      });
+        default: return; // exit this handler for other keys
+      }
+    });
   }
   // --------------------------------------------- //
   // Background-attachment: fixed Solution for IE End
@@ -89,8 +89,8 @@ $(function() {
   // --------------------------------------------- //
   // SVG Fallback Start
   // --------------------------------------------- //
-  if(!Modernizr.svg) {
-    $("img[src*='svg']").attr("src", function() {
+  if (!Modernizr.svg) {
+    $("img[src*='svg']").attr("src", function () {
       return $(this).attr("src").replace(".svg", ".png");
     });
   };
@@ -103,10 +103,10 @@ $(function() {
   // --------------------------------------------- //
   try {
     $.browserSelector();
-    if($("html").hasClass("chrome")) {
+    if ($("html").hasClass("chrome")) {
       $.smoothScroll();
     }
-  } catch(err) {
+  } catch (err) {
   };
   // --------------------------------------------- //
   // Chrome Smooth Scroll End
@@ -115,7 +115,7 @@ $(function() {
   // --------------------------------------------- //
   // Images Moving Ban Start
   // --------------------------------------------- //
-  $("img, a").on("dragstart", function(event) { event.preventDefault(); });
+  $("img, a").on("dragstart", function (event) { event.preventDefault(); });
   // --------------------------------------------- //
   // Images Moving Ban End
   // --------------------------------------------- //
@@ -125,11 +125,11 @@ $(function() {
   // --------------------------------------------- //
   function fullscreenLayout() {
     $(".fullscreen").css({
-        height: $(window).height()
+      height: $(window).height()
     });
   };
   fullscreenLayout();
-  $(window).resize(function(){
+  $(window).resize(function () {
     fullscreenLayout();
   });
   // --------------------------------------------- //
@@ -143,8 +143,8 @@ $(function() {
     var cursor = $('.cursor');
     // follow effect
     function moveCursor(e) {
-	    var t = e.clientX + "px",
-          n = e.clientY + "px";
+      var t = e.clientX + "px",
+        n = e.clientY + "px";
       var circleCursor = anime({
         targets: '.cursor',
         duration: 30,
@@ -155,59 +155,59 @@ $(function() {
     }
     $(window).on('mousemove', moveCursor);
     // line link hover
-    $('.link-s').on('mouseenter', function() {
+    $('.link-s').on('mouseenter', function () {
       cursor.addClass('cursor-s');
     });
-    $('.link-s').on('mouseleave', function() {
+    $('.link-s').on('mouseleave', function () {
       cursor.removeClass('cursor-s');
     });
     // buttons & triggers hover
-    $('.link-m').on('mouseenter', function() {
+    $('.link-m').on('mouseenter', function () {
       cursor.addClass('cursor-m');
     });
-    $('.link-m').on('mouseleave', function() {
+    $('.link-m').on('mouseleave', function () {
       cursor.removeClass('cursor-m');
     });
     // buttons & triggers opposite hover
-    $('.link-m-opposite').on('mouseenter', function() {
-      cursor.addClass('cursor-m-opposite');
-    });
-    $('.link-m-opposite').on('mouseleave', function() {
-      cursor.removeClass('cursor-m-opposite');
-    });
+    // $('.link-m-opposite').on('mouseenter', function() {
+    //   cursor.addClass('cursor-m-opposite');
+    // });
+    // $('.link-m-opposite').on('mouseleave', function() {
+    //   cursor.removeClass('cursor-m-opposite');
+    // });
     // controls hover
-    $('.link-l').on('mouseenter', function() {
+    $('.link-l').on('mouseenter', function () {
       cursor.addClass('cursor-l');
     });
-    $('.link-l').on('mouseleave', function() {
+    $('.link-l').on('mouseleave', function () {
       cursor.removeClass('cursor-l');
     });
     // controls oppisite hover
-    $('.link-l-opposite').on('mouseenter', function() {
+    $('.link-l-opposite').on('mouseenter', function () {
       cursor.addClass('cursor-l-opposite');
     });
-    $('.link-l-opposite').on('mouseleave', function() {
+    $('.link-l-opposite').on('mouseleave', function () {
       cursor.removeClass('cursor-l-opposite');
     });
     // controls arrow hover
-    $('.link-l-arrow').on('mouseenter', function() {
+    $('.link-l-arrow').on('mouseenter', function () {
       cursor.addClass('cursor-l-arrow');
     });
-    $('.link-l-arrow').on('mouseleave', function() {
+    $('.link-l-arrow').on('mouseleave', function () {
       cursor.removeClass('cursor-l-arrow');
     });
     // XL controls hover
-    $('.link-xl').on('mouseenter', function() {
+    $('.link-xl').on('mouseenter', function () {
       cursor.addClass('cursor-xl');
     });
-    $('.link-xl').on('mouseleave', function() {
+    $('.link-xl').on('mouseleave', function () {
       cursor.removeClass('cursor-xl');
     });
     // XL opposite controls hover
-    $('.link-xl-opposite').on('mouseenter', function() {
+    $('.link-xl-opposite').on('mouseenter', function () {
       cursor.addClass('cursor-xl-opposite');
     });
-    $('.link-xl-opposite').on('mouseleave', function() {
+    $('.link-xl-opposite').on('mouseleave', function () {
       cursor.removeClass('cursor-xl-opposite');
     });
   };
@@ -221,24 +221,24 @@ $(function() {
   // Smooth Scroll To Top Start
   // --------------------------------------------- //
   var offset = 300,
-      offset_opacity = 1200,
-      scroll_top_duration = 500,
-      $back_to_top = $('.to-top');
+    offset_opacity = 1200,
+    scroll_top_duration = 500,
+    $back_to_top = $('.to-top');
 
-	$(window).on('scroll', function(){
-		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible fade-out');
-		if( $(this).scrollTop() > offset_opacity ) {
-			$back_to_top.addClass('fade-out');
-		}
-	});
+  $(window).on('scroll', function () {
+    ($(this).scrollTop() > offset) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible fade-out');
+    if ($(this).scrollTop() > offset_opacity) {
+      $back_to_top.addClass('fade-out');
+    }
+  });
 
-	$back_to_top.on('click', function(event){
-		event.preventDefault();
-		$('body,html').animate({
-			scrollTop: 0 ,
-		 	}, scroll_top_duration
-		);
-	});
+  $back_to_top.on('click', function (event) {
+    event.preventDefault();
+    $('body,html').animate({
+      scrollTop: 0,
+    }, scroll_top_duration
+    );
+  });
   // --------------------------------------------- //
   // Smooth Scroll To Top End
   // --------------------------------------------- //
@@ -248,12 +248,12 @@ $(function() {
   // --------------------------------------------- //
   var scrollToPreview = $('.scroll-to-preview');
 
-  scrollToPreview.on('click', function(event){
+  scrollToPreview.on('click', function (event) {
     event.preventDefault();
     smoothScroll($(this.hash));
   });
 
-  function smoothScroll(target){
+  function smoothScroll(target) {
     $('body,html').animate({
       scrollTop: target.offset().top,
     }, 500);

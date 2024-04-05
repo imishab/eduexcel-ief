@@ -115,7 +115,7 @@
   @media only screen and (max-width: 600px) {
     .imgg2 {
       margin-top: 0px;
-      content: url(images/logo.png);
+      content: url(images/img5.png);
       width: 90%;
     }
 
@@ -1010,11 +1010,34 @@
           <!-- Reply Messages End-->
 
           <!-- Notify Contact Form Start-->
-          <form id="forms" action="" class="form notify-form form-light">
-            <input class="block-rounded-s" type="text" name="name" placeholder="Your Name" required>
-            <input class="block-rounded-s" type="text" name="mobile" placeholder="Your Mobile" required>
+          <form id="forms" action="" class="form form-light">
+            <input class="block-rounded-s" type="text" id="name" name="name" placeholder="Your Name*" required>
+            <input class="block-rounded-s" type="text" id="mobile" name="mobile" placeholder="Your Mobile*" required>
 
-            <input class="block-rounded-s" type="text" name="place" placeholder="Your Place" required>
+            <select class="block-rounded-s form-select" name="place" id="place" required>
+              <option selected="" disabled>Select Your preferred venue</option>
+              <option value="Abudhabi">Abudhabi - 14 & 15 June</option>
+              <option value="Riyadh">Riyadh - 4 & 5 May</option>
+              <option value="Calicut">Calicut - 8 & 9 May - Kandamkulam Jubilee Hall</option>
+              <option value="Kannur">Kannur - 16 May - Sadhoo Kalyana Mandapam
+              </option>
+              <option value="Kasaragod">Kasaragod - 18 May - Town Hall
+              </option>
+              <option value="Manjeri">Manjeri - 11 May - Manjeri VP Hall</option>
+              <option value="Tirur">Tirur - 13 May - Thunjan Parambu Memorial Hall</option>
+              <option value="Wayanad">Wayanad - 21 May - Wayanad Muslim Orphanage
+              </option>
+              <option value="Pattambi">Pattambi - 23 May</option>
+              <option value="Aluva">Aluva - 25 May - KMEA Engineering College</option>
+              <option value="Kollam">Kollam - 28 May - TKM College
+              </option>
+              <option value="Kottayam">Kottayam - 30 May - Mammen Mappila Hall
+              </option>
+
+            </select>
+
+            <!-- <input class="block-rounded-s" type="text" name="place" placeholder="Your Place" required> -->
+            <span class="inputs-description">*Required fields</span>
             <button class="btn btn-l btn-light link-m-opposite" type="submit">
               <span class="btn-caption">Submit</span>
             </button>
@@ -1200,23 +1223,30 @@
 
   <script>
     $("#forms").submit((e) => {
-      e.preventDefault()
+      e.preventDefault();
+      var name = $("#name").val().trim();
+      var mobile = $("#mobile").val().trim();
+
+      if (name === '' || mobile === '') {
+        alert("Please fill out both name and mobile fields.");
+        return;
+      }
+
       $.ajax({
         url: "https://script.google.com/macros/s/AKfycbyS1t73T7T_mg2DkG3tR80tm7XYMSMiiNQCyQKG9BEpLZqbWznNh3-ELolHYYOHItWq/exec",
         data: $("#forms").serialize(),
         method: "post",
         success: function (response) {
-          alert("Registration successfully completed")
-          window.location.reload()
-          //window.location.href="https://google.com"
+          alert("Registration successfully completed");
+          window.location.reload();
         },
         error: function (err) {
-          alert("Something Error")
-
+          alert("Something went wrong.");
         }
-      })
-    })
+      });
+    });
   </script>
+
 
   <!-- Custom Cursor -->
   <div class="cursor"></div>
